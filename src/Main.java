@@ -1,28 +1,33 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
 
-        // HomeTask 1
-        int[] arr2 = {1,4,3,2};
-        Arrays.sort(arr2);
+         //HomeTask 1
+        Scanner scanner = new Scanner(System.in);
 
+        // Size of the array
+
+        int numbers = scanner.nextInt();
+        int [] array = new int[numbers];
+
+        // Elements of array
+        for (int i = 0; i < numbers; i++){
+            array[i] = scanner.nextInt();
+        }
+
+        // Sorting array in ascending order
         boolean isSorted = true;
-        for (int s = 1; s < arr2.length; s ++){
-            if (arr2[s] < arr2[s - 1]) {
+        for (int i = 1; i < numbers; i++){
+            if (array[i] < array[i - 1]) {
                 isSorted = false;
                 break;
             }
         }
-        System.out.println(arr2.length);
-        for (int l = 0; l < arr2.length; l++){
-            System.out.print(arr2[l]);
-            if (l < arr2.length - 1){
-                System.out.print(" ");
-            }
-        }
-        System.out.println();
         System.out.println(isSorted);
+        scanner.close();
+
 
 
         // HomeTask 2
@@ -35,15 +40,22 @@ public class Main {
 
         //Implementation 2
         String stringToReverse1 = "]2 gnirts siht esrever lliw I[";
-        StringBuilder reversedString2 = new StringBuilder();
+        StringBuilder reversedString1 = new StringBuilder();
 
         for (int i = stringToReverse1.length() - 1; i>= 0; i--){
-            reversedString2.append(stringToReverse1.charAt(i));
+            reversedString1.append(stringToReverse1.charAt(i));
         }
-        System.out.println("\n" + reversedString2.toString());
+        System.out.println("\n" + reversedString1.toString());
 
         //Implementation 3
+        String stringToReverse2 = "]3 gnirts siht esrever lliw I[";
+        int length = stringToReverse2.length();
+        StringBuilder reversedString2 = new StringBuilder();
 
+        for (int i = length - 1; i >= 0; i--){
+            reversedString2.append(stringToReverse2.charAt(i));
+        }
+        System.out.println(reversedString2);
 
         //HomeTask 3
         System.out.println("\n");
@@ -58,7 +70,7 @@ public class Main {
 
         System.out.println("\n" + "Swapping: " + "\n");
 
-        MakeChanges.ChangeIdentities(person1, person2);
+        MakingChanges.changeIdentities(person1, person2);
 
         System.out.println("Person 1: " + person1.getName() + ", " + person1.getAge());
         System.out.println("Person 2: " + person2.getName() + ", " + person2.getAge());
@@ -66,6 +78,7 @@ public class Main {
         // HomeTask 4
         User user = new User(3,"Ras", "Taman");
         Account accountUser = new Account(2,300L, user);
+        System.out.println(accountUser);
 
         Account [] accounts = {new Account(1,230L, new User(1,"Artem", "Salar"))};
         System.out.println(Arrays.toString(accounts));
@@ -79,7 +92,7 @@ public class Main {
             System.out.println("Account not found.");
         }
 
-        long count = service.countAccountWithBalanceGreaterThan(1000L);
+        long count = service.countAccountsWithBalanceGreaterThan(1000L);
         System.out.println("Number of accounts with balance greater than 1000: " + count);
 
     }

@@ -2,5 +2,5 @@ interface AccountService {
 
     Account findAccountByOwnerId(long id);
 
-    long countAccountWithBalanceGreaterThan(long balance);
+    long countAccountsWithBalanceGreaterThan(long balance);
 }

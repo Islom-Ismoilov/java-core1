@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-class Account implements AccountService {
+class Account {
 
     private long id;
     private long balance;
@@ -24,15 +24,6 @@ class Account implements AccountService {
         return owner;
     }
 
-    @Override
-    public Account findAccountByOwnerId(long id) {
-        return null;
-    }
-
-    @Override
-    public long countAccountWithBalanceGreaterThan(long balance) {
-        return 0;
-    }
 
     @Override
     public String toString() {

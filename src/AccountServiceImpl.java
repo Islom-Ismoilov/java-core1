@@ -17,7 +17,7 @@ class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public long countAccountWithBalanceGreaterThan(long balance){
+    public long countAccountsWithBalanceGreaterThan(long balance){
         long count = 0;
         for (Account account : accounts){
             if (account.getBalance() > balance) {
